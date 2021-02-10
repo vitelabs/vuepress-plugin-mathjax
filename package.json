@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/vitelabs/vuepress-plugin-mathjax#readme",
   "dependencies": {
-    "markdown-it-mathjax-chtml": "^0.1.0"
+    "@iktakahiro/markdown-it-katex": "^4.0.1"
   }
 }

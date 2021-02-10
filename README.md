@@ -12,26 +12,6 @@ Add `@vite/vuepress-plugin-mathjax` to `config.js`:
 
 ```javascript
 plugins: [
-    ['@vite/vuepress-plugin-mathjax', {
-      tex2html: {},
-      mathjax: {}
-    }]
+    ['@vite/vuepress-plugin-mathjax']
   ]
 ```
-
-## Config
-
-### `tex2html`
-
-* **Type**: `Object`
-* **Default**: {}
-
-When generate `mathjax.css`, it will use this config. About more detail please visit [markdown-it-mathjax-chtml](https://github.com/yamavol/markdown-it-mathjax-chtml)
-
-
-### `mathjax`
-
-* **Type**: `Object`
-* **Default**: {}
-
-The mathjax config. [mathjax-v3](https://github.com/mathjax/mathjax-v3)

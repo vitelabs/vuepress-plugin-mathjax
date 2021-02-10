@@ -1,27 +1,19 @@
 const fs = require('fs');
 const path = require('path');
-const mj = require('markdown-it-mathjax-chtml');
-const tex2html = require('markdown-it-mathjax-chtml/src/tex2html');
-
+const mk = require('@iktakahiro/markdown-it-katex');
 
 module.exports = (options, ctx) => {
   const mathjaxStylePath = path.resolve(ctx.tempPath, 'plugins-mathjax.css')
 
-
   return {
     async ready() {
       options = Object.assign({
-        tex2html: options.tex2html || {},
         mathjax: options.mathjax || {}
-      }, options)
-
-      const css = tex2html('', options.tex2html).css;
-      fs.writeFileSync(mathjaxStylePath, css);
+      }, options);
+      fs.writeFileSync(mathjaxStylePath, "@import 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css'\n");
     },
     extendMarkdown: md => {
-      md.use(mj, {
-        mathjax: options.mathjax
-      })
+      md.use(mk)
     },
     enhanceAppFiles: [
       {
